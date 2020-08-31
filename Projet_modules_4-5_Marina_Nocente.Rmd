@@ -37,7 +37,7 @@ tree ~/Projet_modules_4-5
  
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_organisation_repertoire.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_organisation_repertoire.jpg)
 
 
 # Téléchargement des données depuis les banques publiques:
@@ -52,7 +52,7 @@ ls -ltrh ~/Projet_modules_4-5/FASTQ
 
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_fichiers_fastq_compresses_importes.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_fichiers_fastq_compresses_importes.jpg)
 
 
 ## Téléchargement du génome de référence et de l'annotation:
@@ -70,7 +70,7 @@ ls -ltrh ~/Projet_modules_4-5/ANNOTATION
 ls -ltrh ~/Projet_modules_4-5/GENOME_REFERENCE
 
 ```
-![Capture d'écran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_visualisation_fichiers_importes.png)
+![Capture d'écran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_visualisation_fichiers_importes.png)
 
 
 # Contrôle qualité des données brutes (reads):
@@ -85,7 +85,7 @@ srun --cpus-per-task 8 fastqc FASTQ/SRR10390685_2.fastq.gz -o QC/ -t 8
 
 ls -ltrh ./QC
 ```
-![Capture d'écran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_fastqc.jpg)
+![Capture d'écran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_fastqc.jpg)
 
 **Explication des paramètres utilisés :**
 
@@ -106,17 +106,17 @@ scp mnocente@core.cluster.france-bioinformatique.fr:~/Projet_modules_4-5/QC/*_fa
 Dans cette rubrique, on peut voir que les données ont été encodées par la méthode Sanger/Illumina 1.9. Il y a au total 7066055 reads 1 et reads 2. Aucun reads n'ont été flaggés pour une trop faible qualité et la taille des reads est entre 35 et 151 pb pour les reads 1 et 130 et 151 pb pour les reads 2. Le pourcentage en GC des reads 1 et 2 est de 43%.
 D'après la taille des reads, on peut penser que les données ont déjà été nettoyées par la plateforme de séquençage.
 
-![Capture d'ecran de la rubrique "Basic statistics" pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Basic_statistics_read1.jpg)
+![Capture d'ecran de la rubrique "Basic statistics" pour les reads 1](Capture_ecran_projet_Marina/Basic_statistics_read1.jpg)
 
-![Capture d'ecran de la rubrique "Basic statistics" pour les reads 2](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Basic_statistics_read2.jpg)
+![Capture d'ecran de la rubrique "Basic statistics" pour les reads 2](Capture_ecran_projet_Marina/Basic_statistics_read2.jpg)
 
 
 ### Rubrique "Per base sequence quality":
 Dans cette rubrique du rapport de fastqc, on peut voir que la qualité des bases des reads est bonne car les quantiles (boites jaunes) sont tous présents dans la partie de haute qualité à la fois pour les reads 1 et 2.
 
-![Capture d'ecran de la rubrique "Per base sequencing quality" pour le read 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_base_sequencing_quality_read1.jpg)
+![Capture d'ecran de la rubrique "Per base sequencing quality" pour le read 1](Capture_ecran_projet_Marina/Per_base_sequencing_quality_read1.jpg)
 
-![Capture d'ecran de la rubrique "Per base sequencing quality" pour le read 2](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_base_sequencing_quality_read2.jpg)
+![Capture d'ecran de la rubrique "Per base sequencing quality" pour le read 2](Capture_ecran_projet_Marina/Per_base_sequencing_quality_read2.jpg)
 
 Cependant, on remarque équalement qu'il y a une diminution de la qualité des reads pour les dernières bases, ce qui est classique dans un séquençage Illumina. Cela est plus marqué pour les reads 2. Cette diminution de la qualité du séquençage en fin de read est expliquée par les limitations de la chimie.
 
@@ -129,30 +129,30 @@ En séquençage Illumina, il n'y a classiquement pas de N, sauf si il y a un gro
 
 On peut voir ci-dessous ces rubriques pour les reads 1:
 
-![Capture d'ecran de rubriques pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_sequence_GC_content_R1.jpg)
+![Capture d'ecran de rubriques pour les reads 1](Capture_ecran_projet_Marina/Per_sequence_GC_content_R1.jpg)
 
-![Capture d'ecran de rubriques pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_sequence_quality_scores_R1.jpg)
+![Capture d'ecran de rubriques pour les reads 1](Capture_ecran_projet_Marina/Per_sequence_quality_scores_R1.jpg)
 
-![Capture d'ecran de rubriques pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_base_N_content_R1.jpg)
+![Capture d'ecran de rubriques pour les reads 1](Capture_ecran_projet_Marina/Per_base_N_content_R1.jpg)
 
 ### Rubrique "Per base sequence content":
 
 On remarque dans cette rubrique qu'il y a, pour les reads R1 et R2, une variation, un biai, dans le contenu en base au niveau des 10ères bases ainsi qu'à la fin des reads. Cela n'est pas inquiétant, c'est caractéristique d'un séquençage Illumina. Cela arrive au démarrage du séquençage.
 
-![Capture d'ecran du contenu par base des sequences pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Per_base_sequence_content_R1.jpg)
+![Capture d'ecran du contenu par base des sequences pour les reads 1](Capture_ecran_projet_Marina/Per_base_sequence_content_R1.jpg)
 
 ### Rubrique "Sequence duplication levels":
 
 On remarque, pour les reads R1 et R2, que le niveau de duplication des séquences est un peu élevé.
 Cela peut indiquer qu'il y a eu une trop forte amplification de l'ADN ou bien que les reads ont été séquencés avec une très grande profondeur et dans ce cas, c'est normal d'avoir des duplicats.
 
-![Capture d'ecran du niveau de duplication pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Sequence_duplication_level_R1.jpg)
+![Capture d'ecran du niveau de duplication pour les reads 1](Capture_ecran_projet_Marina/Sequence_duplication_level_R1.jpg)
 
 ### Rubrique "Sequence length distribution":
 
 Cette rubrique représente la distribution des longueurs des séquences. La distribution révèle qu'il y a une très grande majorité de reads qui ont une taille entre 140 et 155 pb pour les reads R1 et entre 148 et 152 pb pour les reads R2.
 
-![Capture d'ecran du niveau de la longueur des sequences pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Sequence_length_distribution_R1.jpg)
+![Capture d'ecran du niveau de la longueur des sequences pour les reads 1](Capture_ecran_projet_Marina/Sequence_length_distribution_R1.jpg)
 
 
 ### Rubrique "Overrepresented sequences" et "Adapter content":
@@ -162,11 +162,11 @@ Il s'agit en fait de bases qui ne peuvent pas être lues par le séquenceur (ou 
 
 On remarque également une légère contamination en adaptateurs universels Illumina sur les reads R2. Ils seront enlevés lors du trimming.
 
-![Capture d'ecran des séquences surreprésentées pour les reads 1](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Overrepresented_sequences_R1.jpg)
+![Capture d'ecran des séquences surreprésentées pour les reads 1](Capture_ecran_projet_Marina/Overrepresented_sequences_R1.jpg)
 
-![Capture d'ecran des séquences surreprésentées pour les reads 2](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Overrepresented_sequences_R2.jpg)
+![Capture d'ecran des séquences surreprésentées pour les reads 2](Capture_ecran_projet_Marina/Overrepresented_sequences_R2.jpg)
 
-![Capture d'ecran du contenu en adaptateurs pour les reads 2](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Adaptater_content_R2.jpg)
+![Capture d'ecran du contenu en adaptateurs pour les reads 2](Capture_ecran_projet_Marina/Adaptater_content_R2.jpg)
 
 
 
@@ -226,7 +226,7 @@ srun --cpus-per-task 8 fastp \
 ls -ltrh ~/Projet_modules_4-5/CLEANING/
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_after_fastp.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_after_fastp.jpg)
 
 **Explication des paramètres :**
 
@@ -257,7 +257,7 @@ ls -ltrh ~/Projet_modules_4-5/CLEANING/
 
 ## Visualisation du rapport de fastp:
 
-![Rapport fastp](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Fastp_report_l100.jpg)
+![Rapport fastp](Capture_ecran_projet_Marina/Fastp_report_l100.jpg)
 
 **Analyse des résultats après trimming:**
 
@@ -292,7 +292,7 @@ srun --cpus-per-task 8 fastqc CLEANING/SRR10390685_2.cleaned_filtered.fastq.gz -
 ls -ltrh ./QC
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_fastqc2.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_fastqc2.jpg)
 
 ## Récupération des fichiers fastqc au format html pour les visualiser en local sur ma machine:
 
@@ -303,9 +303,9 @@ scp mnocente@core.cluster.france-bioinformatique.fr:~/Projet_modules_4-5/QC/*.cl
 
 On remarque que les séquences surreprésentées (avec que des N) ont bien été supprimées (mais pas celles avec que des G). La légère contamination en adaptateurs universels Illumina sur les reads R2 a bien été supprimée.
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Adaptateurs_reads2_post-trimming.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Adaptateurs_reads2_post-trimming.jpg)
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Overrepresented_seqences_read1_post-trimming.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Overrepresented_seqences_read1_post-trimming.jpg)
 
 
 ## Rapport regroupant les résultats de fastqc et fastp: utilisation de l'outil MultiQC:
@@ -318,7 +318,7 @@ srun multiqc ./FASTQ ./QC ./CLEANING -o CLEANING -n multiqc_report
 ls -ltrh ./CLEANING/
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_terminal_apres_multiQC.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_terminal_apres_multiQC.jpg)
 
 Ce rapport fournit un résumé de ce que l'on sait et de ce que l'on a fait sur nos deux fichiers fastq.
 
@@ -347,9 +347,9 @@ samtools view -hbS > MAPPING/SRR10390685.bam
 ls -ltrh ./MAPPING
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_indexage.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_indexage.jpg)
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_alignement.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_alignement.jpg)
 
 J'ai choisi d'utiliser l'outil bwa-mem pour aligner mes reads sur le génome de référence car c'est un aligneur qui a de bonnes performances pour aligner les "petits" reads (de 70 à 1000 pb) sur leur génome de référence. BWA-MEM est en général rapide et précis. 
 Référence : http://bio-bwa.sourceforge.net/bwa.shtml.
@@ -381,7 +381,7 @@ ls -ltrh ./MAPPING
 
 ```
 
-![Capture d'ecran de mon terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_flagstat.jpg)
+![Capture d'ecran de mon terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_flagstat.jpg)
 
 **Résultats du samtools flagstat :**
 
@@ -390,7 +390,7 @@ less ./MAPPING/SRR10390685_flagstat.txt
 
 ```
 
-![Résultats samtools flagstat](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Resultats_samtools_flagstat_l100.jpg)
+![Résultats samtools flagstat](Capture_ecran_projet_Marina/Resultats_samtools_flagstat_l100.jpg)
 
 Grâce à cet outil, on a accès à différentes informations sur le mapping de nos échantillons :
 
@@ -425,7 +425,7 @@ ls -ltrh ./ANNOTATION
 
 ```
 
-![Capture écran terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_gunzip_gff.jpg)
+![Capture écran terminal](Capture_ecran_projet_Marina/Capture_ecran_gunzip_gff.jpg)
 
 
 ## On vérifie que le gène trmNF est bien dans le fichier d'annotation et création d'un gff ne contenant que le gène d'intérêt :
@@ -438,7 +438,7 @@ ls -ltrh ./EXPLORATIONS_POST_MAPPING
 cat ./EXPLORATIONS_POST_MAPPING/trmNF_gene.gff
 ```
 
-![Capture écran terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_grep_gff.jpg)
+![Capture écran terminal](Capture_ecran_projet_Marina/Capture_ecran_grep_gff.jpg)
 
 
 ## Extraction des reads chevauchant à au moins 50% le gène trmNF avec bedtools intersect:
@@ -461,7 +461,7 @@ ls -ltrh ./EXPLORATIONS_POST_MAPPING
 -f : Par défaut, bedtools intersect signalent un chevauchement entre A et B tant qu'il y a au moins une paire de bases qui se chevauche. Or, ici on veut trouver les reads dont au moins 50% de leur longueur est alignée sur le gène trmNF. L'option -f 0.50 permet de définir le chauvauchement minimum (50% dans notre cas) que nous voulons avoir pour les fractions de A.
 
 
-![Capture écran terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Capture_ecran_apres_bedtools.jpg)
+![Capture écran terminal](Capture_ecran_projet_Marina/Capture_ecran_apres_bedtools.jpg)
 
 
 # Version des outils utilisés dans ce projet :
@@ -475,7 +475,7 @@ multiqc --version
 bwa
 ```
 
-![Capture écran terminal](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Outils_version.jpg)
+![Capture écran terminal](Capture_ecran_projet_Marina/Outils_version.jpg)
 
 **La version des outils est donc :**
 
@@ -501,5 +501,5 @@ cd ~/Projet_modules_4-5
 tree ~/Projet_modules_4-5
 ```
 
-![Capture écran terminal arborescence finale](/Users/mn242062/Desktop/Projet_DU_modules_4-5/Arborescence_final.jpg)
+![Capture écran terminal arborescence finale](Capture_ecran_projet_Marina/Arborescence_final.jpg)
 
